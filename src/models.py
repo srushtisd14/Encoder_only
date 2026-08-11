@@ -1,9 +1,1 @@
-MODEL_CONFIG = {
-    "bert-base": "bert-base-uncased",
-    "roberta-base": "roberta-base",
-    "distilbert": "distilbert-base-uncased",
-    "albert-base-v2": "albert-base-v2",
-    "electra-base": "google/electra-base-discriminator",
-    "deberta-v3-base": "microsoft/deberta-v3-base",
-    "mpnet-base": "microsoft/mpnet-base",
-}
+MODEL_CONFIG = {"bert-base": "bert-base-uncased", "roberta-base": "roberta-base", "distilbert": "distilbert-base-uncased", "albert-base-v2": "albert-base-v2", "electra-base": "google/electra-base-discriminator", "deberta-v3-base": "microsoft/deberta-v3-base", "mpnet-base": "microsoft/mpnet-base"}
