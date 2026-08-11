@@ -1,0 +1,10 @@
+transformers==5.4.0
+datasets==4.5.0
+accelerate
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+sentencepiece
+safetensors
