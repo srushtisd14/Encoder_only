@@ -315,11 +315,12 @@ def main():
 
     eval_start = time.perf_counter()
 
-    predictions = trainer.predict(
-        tokenized["test"]
-        if "test" in tokenized
-        else tokenized["validation"]
-    )
+    if args.dataset in ["sst2", "mrpc", "qnli", "mnli"]:
+        evaluation_dataset = tokenized["validation"]
+    else:
+        evaluation_dataset = tokenized["test"]
+
+    predictions = trainer.predict(evaluation_dataset)
 
     inference_time = (
         time.perf_counter()
