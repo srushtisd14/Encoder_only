@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 MODELS=(
     bert-base
     roberta-base
@@ -21,7 +23,6 @@ DATASETS=(
 
 for MODEL in "${MODELS[@]}"
 do
-
     for DATASET in "${DATASETS[@]}"
     do
 
@@ -33,8 +34,8 @@ do
             --model "$MODEL" \
             --dataset "$DATASET"
 
-        echo "Completed: $MODEL - $DATASET"
+        echo "SUCCESS: $MODEL - $DATASET"
+        echo "=========================================="
 
     done
-
 done

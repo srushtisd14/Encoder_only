@@ -227,7 +227,7 @@ def main():
 
     training_args = TrainingArguments(
 
-        output_dir=output_dir,
+        output_dir="./outputs",
 
         learning_rate=2e-5,
 
@@ -241,7 +241,7 @@ def main():
 
         eval_strategy="epoch",
 
-        save_strategy="epoch",
+        save_strategy="no",
 
         load_best_model_at_end=True,
 
@@ -315,10 +315,12 @@ def main():
 
     eval_start = time.perf_counter()
 
-    if args.dataset in ["sst2", "mrpc", "qnli", "mnli"]:
-        evaluation_dataset = tokenized["validation"]
-    else:
+    if args.dataset == "mnli":
+        evaluation_dataset = tokenized["validation_matched"]
+    elif "test" in tokenized:
         evaluation_dataset = tokenized["test"]
+    else:
+        evaluation_dataset = tokenized["validation"]
 
     predictions = trainer.predict(evaluation_dataset)
 
