@@ -249,8 +249,10 @@ def main():
 
         train_dataset=tokenized["train"],
 
-        eval_dataset=(
-            tokenized["validation"]
+        eval_dataset = (
+            tokenized["validation_matched"]
+            if args.dataset == "mnli"
+            else tokenized["validation"]
             if "validation" in tokenized
             else tokenized["test"]
         ),
