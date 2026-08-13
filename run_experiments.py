@@ -237,7 +237,7 @@ def main():
         logging_strategy="steps",
         logging_steps=100,
         report_to="none",
-        fp16=torch.cuda.is_available(),
+        fp16=False,
         seed=42
     )
 
